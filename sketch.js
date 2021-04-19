@@ -11,7 +11,7 @@ function setup() {
   bullet= createSprite(500,200,50,50);
   wall = createSprite(1200,200,60,100);
 
-  bullet.velocityX=-5;
+  bullet.velocityX=speed;
 
   thickness=random(22,83);
 
@@ -22,7 +22,7 @@ function setup() {
 function draw() {
   background("black");
   
-  if(hascolloded(bullet,wall))
+  if(hascollided(bullet,wall))
   {
     bullet.velocityX=0;
     var damage=0.5 * weight * speed * speed/(thickness * thickness * thickness);
@@ -42,7 +42,7 @@ function draw() {
   
   drawSprites();
 
-  hascollided(bullet,wall);
+  
 }
 
 
